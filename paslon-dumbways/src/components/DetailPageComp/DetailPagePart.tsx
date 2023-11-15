@@ -17,9 +17,7 @@ export const DetailPagePart = () => {
               </Link>
             </div>
             <div className="flex-grow text-center">
-              <Link to="/dashboard">
-                <h1 className="text-2xl mr-24">BERITA HARI INI</h1>
-              </Link>
+              <h1 className="text-2xl mr-24">BERITA HARI INI</h1>
             </div>
           </div>
           <div>
