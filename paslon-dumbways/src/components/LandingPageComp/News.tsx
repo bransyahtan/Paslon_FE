@@ -62,7 +62,7 @@ export const News = () => {
           </div> */}
           {news.map((item, index) => {
             return index === 0 || index === 6 ? (
-              <div className="col-span-2">
+              <div key={index} className="col-span-2">
                 <BigCard
                   title={item.title}
                   author={item.author}
@@ -71,7 +71,7 @@ export const News = () => {
                 />
               </div>
             ) : (
-              <div className="col-span-1">
+              <div key={index} className="col-span-1">
                 <SmallCard
                   title={item.title}
                   author={item.author}

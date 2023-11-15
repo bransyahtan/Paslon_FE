@@ -1,5 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { DashboardPage, DetailPage, LandingPage } from "./pages";
+import {
+  DashboardPage,
+  DetailPage,
+  LandingPage,
+  LoginPage,
+  RegisterPage,
+} from "./pages";
+import { PrivateRouteAdmin, PrivateRouteUser } from "./utils/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -7,12 +14,32 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
-    path: "/detail-page",
-    element: <DetailPage />,
+    path: "/",
+    element: <PrivateRouteUser />,
+    children: [
+      {
+        path: "detail-page",
+        element: <DetailPage />,
+      },
+    ],
   },
   {
-    path: "/dashboard",
-    element: <DashboardPage />,
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
+  },
+  {
+    path: "/admin",
+    element: <PrivateRouteAdmin />,
+    children: [
+      {
+        path: "dashboard",
+        element: <DashboardPage />,
+      },
+    ],
   },
 ]);
 function App() {
