@@ -1,10 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
+  AddPartai,
+  AddPaslon,
   DashboardPage,
   DetailPage,
   LandingPage,
+  ListPartai,
+  ListPaslon,
   LoginPage,
   RegisterPage,
+  VotePage,
 } from "./pages";
 import { PrivateRouteAdmin, PrivateRouteUser } from "./utils/PrivateRoute";
 
@@ -20,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "detail-page",
         element: <DetailPage />,
+      },
+      {
+        path: "vote-page",
+        element: <VotePage />,
       },
     ],
   },
@@ -38,6 +47,22 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <DashboardPage />,
+      },
+      {
+        path: "add-partai",
+        element: <AddPartai />,
+      },
+      {
+        path: "add-paslon",
+        element: <AddPaslon />,
+      },
+      {
+        path: "list-partai",
+        element: <ListPartai />,
+      },
+      {
+        path: "list-paslon",
+        element: <ListPaslon />,
       },
     ],
   },

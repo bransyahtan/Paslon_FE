@@ -1,30 +1,28 @@
 import { useState } from "react";
-import { Jumbotron } from "../components/LandingPageComp/Jumbotron";
-import { News } from "../components/LandingPageComp/News";
-import { Reminder } from "../components/LandingPageComp/Reminder";
 import { FooterPart } from "../components/common/Footer";
 import { NavbarPart } from "../components/common/Navbar";
+import { InfoPaslonPart } from "../components/votePageComp/InfoPaslonPart";
+import { PiePart } from "../components/votePageComp/PiePart";
+import { ReminderVote } from "../components/votePageComp/ReminderVote";
 import { LoginModal } from "../components/loginComp/modals/LoginModal";
 import { RegisterModal } from "../components/loginComp/modals/RegisterModal";
 
-export default function App() {
+export const VotePage = () => {
   const [isModalLoginOpen, setisModalLoginOpen] = useState(false);
   const [isModalRegisterOpen, setisModalRegisterOpen] = useState(false);
   const toggleModalLogin = () => setisModalLoginOpen(!isModalLoginOpen);
   const toggleModalRegister = () =>
     setisModalRegisterOpen(!isModalRegisterOpen);
-
   const openRegisterModal = () => {
-    toggleModalRegister();
     toggleModalLogin();
+    toggleModalRegister();
   };
-
   return (
-    <div className="bg-zinc-300">
+    <div>
       <NavbarPart toggleModal={toggleModalLogin} />
-      <Jumbotron />
-      <News />
-      <Reminder />
+      <PiePart />
+      <InfoPaslonPart />
+      <ReminderVote />
       <FooterPart />
       {isModalLoginOpen && (
         <LoginModal
@@ -40,4 +38,4 @@ export default function App() {
       )}
     </div>
   );
-}
+};
