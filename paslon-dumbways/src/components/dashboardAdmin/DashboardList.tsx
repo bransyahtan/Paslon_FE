@@ -7,7 +7,7 @@ export const DashboardList = () => {
         </h1>
         {/* Table */}
         <div className="flex justify-center">
-          <table className="w-4/5">
+          <table className="w-3/5">
             <thead className="bg-slate-600 text-white">
               <tr>
                 <th className="py-1 px-4 border border-t-2 border-black">No</th>
@@ -89,7 +89,7 @@ export const DashboardList = () => {
             </tbody>
           </table>
         </div>
-        <div className="w-4/5 mx-auto flex justify-center mt-10">
+        <div className="w-3/5 mx-auto flex justify-center mt-10">
           <h2 className="mr-auto uppercase font-bold text-2xl text-white">
             Total Suara terkumpul : 100.000 votes
           </h2>

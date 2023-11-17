@@ -8,13 +8,13 @@ type Login = {
 
 const data: Login = {
   isLogin: true,
-  role: "admin",
+  role: "user",
 };
 
 // PrivateRoute  Admin
 export const PrivateRouteAdmin: React.FC = () => {
   if (!data.isLogin || data.role !== "admin") {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
   return <Outlet />;
 };
@@ -22,7 +22,7 @@ export const PrivateRouteAdmin: React.FC = () => {
 // PrivateRoute  User
 export const PrivateRouteUser: React.FC = () => {
   if (!data.isLogin || data.role !== "user") {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
   return <Outlet />;
 };

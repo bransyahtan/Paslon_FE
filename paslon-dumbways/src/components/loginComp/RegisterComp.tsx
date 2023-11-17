@@ -4,7 +4,7 @@ export const RegisterComp = () => {
   return (
     <>
       <div className="bg-slate-900 h-screen flex justify-center items-center">
-        <div className="w-1/3 h-auto bg-white rounded-2xl p-8 mt-8 mb-8">
+        <div className="w-96 h-auto bg-white rounded-2xl p-8 mt-8 mb-8">
           <h1 className="text-3xl font-bold mb-4 text-center text-slate-900">
             REGISTER
           </h1>
