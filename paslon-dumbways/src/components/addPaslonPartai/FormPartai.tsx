@@ -1,9 +1,9 @@
 import paslon3 from "../../assets/images/paslon3.jpg";
 
-export const FormPaslon = () => {
+export const FormPartai = () => {
   return (
     <>
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center gap-10 my-10">
         <div className="">
           <img
             src={paslon3}
@@ -18,7 +18,7 @@ export const FormPaslon = () => {
                 htmlFor="fullName"
                 className="block text-gray-700 text-sm font-bold mb-2"
               >
-                Nama Lengkap
+                Nama
               </label>
               <input
                 type="text"
@@ -30,17 +30,17 @@ export const FormPaslon = () => {
             </div>
             <div className="mb-4">
               <label
-                htmlFor="Number"
+                htmlFor="ketumName"
                 className="block text-gray-700 text-sm font-bold mb-2"
               >
-                Nomor Urut
+                Ketua Umum
               </label>
               <input
                 type="text"
-                id="Number"
-                name="Number"
+                id="ketumName"
+                name="ketumName"
                 className="w-full px-3 py-2 border-2 border-black rounded-md h-14"
-                placeholder="Your Number"
+                placeholder="Nama Ketua Umum"
               />
             </div>
             <div className="mb-4">
@@ -55,10 +55,28 @@ export const FormPaslon = () => {
                 name="visiMisi"
                 className="w-full px-3 py-2 border-2 border-black rounded-md h-32"
                 placeholder="Visi dan Misi Anda"
+                cols={5}
+                style={{ resize: "none" }}
+              ></textarea>
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="alamat"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              >
+                Alamat
+              </label>
+              <textarea
+                id="alamat"
+                name="alamat"
+                className="w-full px-3 py-2 border-2 border-black rounded-md h-32"
+                placeholder="Visi dan Misi Anda"
+                cols={5}
                 style={{ resize: "none" }}
               ></textarea>
             </div>
           </form>
+
           <button
             type="submit"
             className="w-full bg-slate-700 text-white font-bold py-2 px-4 rounded-md hover:bg-slate-900 h-12"
