@@ -5,7 +5,7 @@ export const ReminderVote = () => {
         <div className="text-4xl font-bold text-red-600 text-center w-1/2">
           <h1>
             PILIH BERDASARKAN GACHA TIDAK USAH SERIUS YANG PENTING INGIN
-            MELEGALKAN SLOT
+            MELEGALKAN SLOT DAN JUDI ONLINE
           </h1>
         </div>
       </div>

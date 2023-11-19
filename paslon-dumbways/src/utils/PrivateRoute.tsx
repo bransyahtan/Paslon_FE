@@ -8,7 +8,7 @@ type Login = {
 
 const data: Login = {
   isLogin: true,
-  role: "user",
+  role: "admin",
 };
 
 // PrivateRoute  Admin
