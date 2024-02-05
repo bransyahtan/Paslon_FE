@@ -1,6 +1,45 @@
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../features/auth/authSlice";
+import { AppDispatch } from "../../app/store";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 export const LoginComp = () => {
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
+  };
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(login(formData))
+      .unwrap()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: error.message,
+        });
+      });
+  };
   return (
     <>
       <div className="bg-slate-900 h-screen flex justify-center items-center">
@@ -8,7 +47,7 @@ export const LoginComp = () => {
           <h1 className="text-3xl font-bold mb-4 text-center text-slate-900">
             LOGIN
           </h1>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label
                 htmlFor="username"
@@ -17,6 +56,7 @@ export const LoginComp = () => {
                 Username
               </label>
               <input
+                onChange={handleChange}
                 type="text"
                 id="username"
                 name="username"
@@ -32,6 +72,7 @@ export const LoginComp = () => {
                 Password
               </label>
               <input
+                onChange={handleChange}
                 type="password"
                 id="password"
                 name="password"
