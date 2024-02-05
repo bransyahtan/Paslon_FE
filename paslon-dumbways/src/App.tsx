@@ -16,12 +16,12 @@ import { PrivateRouteAdmin, PrivateRouteUser } from "./utils/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
-  },
-  {
-    path: "/",
     element: <PrivateRouteUser />,
     children: [
+      {
+        path: "",
+        element: <LandingPage />,
+      },
       {
         path: "detail-page",
         element: <DetailPage />,

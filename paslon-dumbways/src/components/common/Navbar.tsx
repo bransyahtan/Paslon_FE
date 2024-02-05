@@ -1,11 +1,7 @@
 import logo from "../../assets/logos/logo.png";
 import { Link } from "react-router-dom";
 
-interface props {
-  toggleModal: () => void;
-}
-
-export const NavbarPart: React.FC<props> = ({ toggleModal }) => {
+export const NavbarPart = () => {
   return (
     <>
       <div className="flex bg-black justify-center">
@@ -28,12 +24,9 @@ export const NavbarPart: React.FC<props> = ({ toggleModal }) => {
                 <span>Voting</span>
               </Link>
             </p>
-            <button
-              className="bg-white rounded-full px-2 py-1"
-              onClick={toggleModal}
-            >
-              LOGIN
-            </button>
+            <h1 className="bg-red-500 rounded-full px-2 py-1 text-xl">
+              Selamat Datang
+            </h1>
           </div>
         </div>
       </div>
